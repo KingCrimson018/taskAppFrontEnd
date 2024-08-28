@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-4" *ngFor="let user of users">
+            <div class="card text-white bg-primary">
+                <img class="card-img-top" [src]="user.imgUrl" alt="Title" />
+                <div class="card-body">
+                    <h4 class="card-title">{{user.username}}</h4>
+                    <p class="card-text">Este es el usuario {{user.username}}</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+</div>

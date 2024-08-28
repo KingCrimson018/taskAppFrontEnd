@@ -1,0 +1,27 @@
+
+<div class="card text-white bg-primary">
+    
+    <div class="btn-group dropend">
+        <button type="button" id="options_button" class="btn btn-secondary " data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-three-dots-vertical"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item d-flex justify-content-between" data-bs-toggle="modal" [attr.data-bs-target]="'#'+task._id">Editar <i class="bi bi-pencil"></i> </li>
+          <li class="dropdown-item d-flex justify-content-between" (click)="deleteTask()">Eliminar <i class="bi bi-trash"></i></li>
+
+        </ul>
+      </div>
+    <img class="card-img-top" [src]="task.imgUrl || '../../assets/no_photo.jpg'" alt="Title" />
+    <div class="card-body">
+        <h4 class="card-title">{{task.title}}</h4>
+        <p>{{task.description}}</p>
+    </div>
+</div>
+
+
+
+<!-- Modal para editar task -->
+<app-edit-task  [task]="task" (updateEvent)="taskUpdatedEvent($event)" class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" [id]="task._id"></app-edit-task>
+
+
+

@@ -1,0 +1,39 @@
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Update Task</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    
+                        <form [formGroup]="form" (submit)="onSubmit()">
+                            <div class="row">
+                                <div class=" col-sm-12 col-md-6">
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input type="text" class="form-control" formControlName="title" name="title" id="title"   placeholder="Type Here: "/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="description" class="form-label">Description</label>
+                                        <textarea class="form-control" formControlName="description" name="description" id="description" rows="3"></textarea>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-sm-12 col-md-5">
+                                    <div class="mb-3">
+                                        <label for="imgUrl" class="form-label">Choose file</label>
+                                        <input type="file" class="form-control" name="imgUrl" id="imgUrl" placeholder="Select File" (change)="previewImage($event)" />
+                                    </div>
+                                    <img [src]="imgUrl || task.imgUrl || '../../assets/no_photo.jpg'" alt="">
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>

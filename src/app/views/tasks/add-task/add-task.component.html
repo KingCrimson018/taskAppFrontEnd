@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+
+<div class="container mt-4 p-5 overflow-auto">
+    <h2>Add Task</h2>
+    <form [formGroup]="form" (submit)="onSubmit()" >
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" formControlName="title" id="title"  placeholder="Type Here: " />
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" name="description" formControlName="description" id="description"  placeholder="Type Here: " />
+        </div>
+
+        <div class="mb-3">
+            <label for="imgUrl" class="form-label">Choose file</label>
+            <input type="file" class="form-control" name="imgUrl" formControlName="imgUrl" (change)="previewImage($event)" id="imgUrl" placeholder="Type Here: " />
+            <img [src]="imgUrl || '../../assets/no_photo.jpg'" alt="">
+        </div>
+        
+        <button type="submit" class="btn btn-primary"> Add Task </button>
+        
+    </form>
+</div>

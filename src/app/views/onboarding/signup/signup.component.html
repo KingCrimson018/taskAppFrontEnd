@@ -1,0 +1,25 @@
+<div class="container overflow-auto">
+    <h2>Sign Up</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" id="username" formControlName="username" placeholder="Type Here: " />
+        </div>
+        
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="text" class="form-control" name="password" id="password" formControlName="password" placeholder="Type Here: " />
+        </div>
+
+        <div class="mb-3">
+            <label for="imgUrl" class="form-label">Choose file</label>
+            <input type="file" class="form-control" name="imgUrl" (change)="previewImage($event)" formControlName="imgUrl" id="imgUrl" placeholder="Select File Here"  />
+            <img [src]="imgUrl || '../../assets/no_photo.jpg'" alt="">
+        </div>
+        
+        
+        <div class="btn btn-secondary " routerLink="../signin">Sign In</div>
+        <button type="submit" class="btn btn-primary m-3">Sign Up</button>
+
+    </form>
+</div>
